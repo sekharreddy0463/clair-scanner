@@ -29,4 +29,15 @@ steps:
        export GOROOT=/usr/local/go
        export GOPATH=$HOME/go
        export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+- task: CmdLine@2
+  inputs:
+    script: |
+      # Clone the repo
+      git clone https://github.com/sekharreddy0463/clair-scanner.git
+      # Build and install 
+      cd clair-scanner
+      make build
+      make installLocal
+      # Run
+      ./clair-scanner -h
        
