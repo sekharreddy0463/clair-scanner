@@ -38,6 +38,7 @@ steps:
       cd clair-scanner
       make build
       make installLocal
+      ls
       # Run
-      ./clair-scanner -h
+      #./clair-scanner -h
        
