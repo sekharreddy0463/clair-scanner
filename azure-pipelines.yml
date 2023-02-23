@@ -41,4 +41,5 @@ steps:
       ls
       # Run
       #./clair-scanner -h
+       ./example-run.sh
        
