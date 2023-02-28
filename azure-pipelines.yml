@@ -39,5 +39,7 @@ steps:
       make build
       make installLocal
       ls
+      clair-scanner -w nginx
+
       
        
