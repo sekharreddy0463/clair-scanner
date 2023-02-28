@@ -39,7 +39,5 @@ steps:
       make build
       make installLocal
       ls
-      # Run
-      #./clair-scanner -h
-       ./example-run.sh
+      
        
