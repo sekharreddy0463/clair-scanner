@@ -17,31 +17,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: CmdLine@2
+    
+- task: DockerInstaller@0
   inputs:
-     script: |
-       sudo apt-get update -y
-       sudo apt-get -y upgrade
-       cd /tmp
-       wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
-       sudo tar -xvf go1.11.linux-amd64.tar.gz
-       sudo mv go /usr/local
-       export GOROOT=/usr/local/go
-       export GOPATH=$HOME/go
-       export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-- task: CmdLine@2
-  inputs:
-    script: |
-      # Clone the repo
-      git clone https://github.com/sekharreddy0463/clair-scanner.git
-      # Build and install 
-      cd clair-scanner
-      make build
-      make installLocal
-      ls
-      - task: DockerInstaller@0
-        inputs:
-          dockerVersion: '17.09.0-ce'
+    dockerVersion: '17.09.0-ce'
 - task: CmdLine@2
   inputs:
     script: |
