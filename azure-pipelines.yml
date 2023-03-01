@@ -32,5 +32,7 @@ steps:
     script: |
       curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_linux_amd64 -o /usr/local/bin/clair-scanner
       chmod +x /usr/local/bin/clair-scanner
+      docker pull nginx
+      clair-scanner --ip="localhost" nginx
       
        
