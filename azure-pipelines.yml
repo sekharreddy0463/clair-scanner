@@ -27,5 +27,10 @@ steps:
        docker run -p 5432:5432 -d --name db arminc/clair-db:latest
        docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan:latest  docker images
        docker ps
+- task: CmdLine@2
+  inputs:
+    script: |
+      curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_linux_amd64 -o /usr/bin/clair-scanner
+      chmod +x /usr/bin/clair-scanner
       
        
