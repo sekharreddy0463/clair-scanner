@@ -35,6 +35,7 @@ steps:
       curl -L https://github.com/arminc/clair-scanner/releases/download/v12/clair-scanner_linux_amd64 -o /usr/local/bin/clair-scanner
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
-      clair-scanner --ip 127.0.0.1:6060 nginx
+      clair-scanner -h
+      clair-scanner --ip 172.17.255.255 nginx
       
        
