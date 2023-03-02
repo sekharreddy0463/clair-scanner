@@ -27,6 +27,8 @@ steps:
        docker run -p 5432:5432 -d --name db arminc/clair-db:latest
        docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan:latest  docker images
        docker ps
+       ip a
+       ipaddr
 - task: CmdLine@2
   inputs:
     script: |
