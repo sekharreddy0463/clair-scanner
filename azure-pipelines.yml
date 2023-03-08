@@ -26,6 +26,7 @@ steps:
     script: |
        docker run -p 5432:5432 -d --name db arminc/clair-db:latest
        docker run -p 6060:6060 --link db:postgres -d --name clair arminc/clair-local-scan:latest  docker images
+       docker images
        docker ps
        ip a
       
@@ -36,6 +37,6 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      clair-scanner -c http://localhost:6060 --ip 3.85.232.123 nginx
+      clair-scanner  --ip 3.85.232.123 nginx
       
        
