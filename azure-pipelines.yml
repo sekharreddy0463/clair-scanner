@@ -30,8 +30,8 @@ steps:
        docker ps
        ip a
        ifconfig
-       HOST_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')
       
+           
 - task: CmdLine@2
   inputs:
     script: |
@@ -39,6 +39,7 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      ./clair-scanner --ip ${HOST_IP} nginx
+      HOST_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')
+      echo "HOST_IP"
       
        
