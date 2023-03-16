@@ -29,7 +29,7 @@ steps:
        docker images
        docker ps
        ip a
-       ipconfig
+       ifconfig
       
 - task: CmdLine@2
   inputs:
