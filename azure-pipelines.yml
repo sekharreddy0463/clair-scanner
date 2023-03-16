@@ -30,6 +30,7 @@ steps:
        docker ps
        ip a
        ifconfig
+       ifconfig docker0 | grep inet
       
            
 - task: CmdLine@2
