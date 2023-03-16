@@ -38,6 +38,6 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      clair-scanner  --ip 10.1.0.50 nginx
+      clair-scanner --clair="http://127.0.0.1:6060" --ip 10.1.0.50 nginx
       
        
