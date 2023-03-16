@@ -39,6 +39,6 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      clair-scanner  --ip ${HOST_IP} nginx
+      ./clair-scanner --ip ${HOST_IP} nginx
       
        
