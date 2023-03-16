@@ -39,7 +39,7 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      clair-scanner --clair="http://127.0.0.1:6060" "nginx"
+      clair-scanner --ip 172.17.0.1 "nginx"
      
       
        
