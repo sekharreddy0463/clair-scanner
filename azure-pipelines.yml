@@ -39,7 +39,7 @@ steps:
       chmod +x /usr/local/bin/clair-scanner
       docker pull nginx
       clair-scanner -h
-      clair-scanner image: "nginx"
+      clair-scanner IMAGE="nginx"
      
       
        
